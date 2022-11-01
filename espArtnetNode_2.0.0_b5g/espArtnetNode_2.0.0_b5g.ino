@@ -341,7 +341,7 @@ void dmxHandle(uint8_t group, uint8_t port, uint16_t numChans, bool syncEnabled)
     if (deviceSettings.portAmode == TYPE_WS2812) {
       
       #ifndef ESP_01
-        setStatusLed(STATUS_LED_A, GREEN);
+        setStatusLed(STATUS_LED_A, CYAN);
       #endif
       
       if (deviceSettings.portApixMode == FX_MODE_PIXEL_MAP) {
@@ -606,4 +606,3 @@ void doStatusLedOutput() {
 void setStatusLed(uint8_t num, uint32_t col) {
   memcpy(&statusLedData[num*3], &col, 3);
 }
-
